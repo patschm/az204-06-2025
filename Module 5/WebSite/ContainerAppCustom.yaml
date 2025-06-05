@@ -10,7 +10,7 @@ properties:
     activeRevisionsMode: Multiple
     secrets:
       - name: acrpass
-        value: 5tdAOZj/EVIBuwFPOXegCvODbKQo+oKF1tkhmMR8d6+ACRAgCRD1
+        value: 
     ingress:
       external: true
       allowInsecure: false

@@ -47,10 +47,10 @@ properties:
     azureFile:
       shareName: database-files
       storageAccountName: psdatabases
-      storageAccountKey: Te1XpDxsqu7JVp0TXbjvGJk9bTCfE1w0x8vmH5+rveMteds+csLWTHnR7kuvBJC+NuuQXtxA5xLI+AStvBoVpw==
+      storageAccountKey: 
   imageRegistryCredentials:
   - server: psrepo.azurecr.io
     username: psrepo
-    password: RawUxqcVQDvt4YyO1zvvJACQSkQvWfNBgh7+NqPiJg+ACRB5VydW
+    password: 
 tags: {test: test}
 type: Microsoft.ContainerInstance/containerGroups

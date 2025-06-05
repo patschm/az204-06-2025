@@ -10,7 +10,7 @@ namespace CloudStorageV12;
 
 class Program
 {
-    private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=psstoring;AccountKey=6/aaOfOUzTaIWGLpZFGtfavTA4J23RwPZuhNRI3Si9cSw5MRlgevGwqKr1qBqlnByknKGxAsurIl+AStZUEN2w==;EndpointSuffix=core.windows.net";
+    private const string connectionString = "DefaultEndpointsProtocol=";
     private static string basePath = Assembly.GetExecutingAssembly().Location;
 
     static async Task Main(string[] args)
