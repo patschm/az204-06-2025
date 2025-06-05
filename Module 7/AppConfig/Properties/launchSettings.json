@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AppConfig": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "OMGEVING": "Production"
+      }
+    }
+  }
+}
