@@ -11,20 +11,20 @@ namespace EvtHubConsumer;
 
 class Program
 {
-    private const string conStr = "Endpoint=sb://ps-myns.servicebus.windows.net/;SharedAccessKeyName=lezer;SharedAccessKey=UIJC2SLmRgrg6xSn1IUkk5Pq0CZgeRluT+AEhGpmvXY=;EntityPath=hup";
-    private const string hubName = "hup";
+    private const string conStr = "";
+    private const string hubName = "mijnhup";
 
-    private const string checkpointStorage = "DefaultEndpointsProtocol=https;AccountName=psstoor;AccountKey=wVBCf5tlyKMzuJKp3El5D4Km73Lzsu3mJEjsycmTeiqMz+2PiQSY1+BOQC6PZcsTeedyiqHahJUU+AStNNI4SQ==;EndpointSuffix=core.windows.net";
+    private const string checkpointStorage = "";
 
     static async Task Main(string[] args)
     {
-        //await LeanAndMean();
-       await UsingProcessors();
+        await LeanAndMean();
+       //await UsingProcessors(args.Length >= 1 ? args[0]: EventHubConsumerClient.DefaultConsumerGroupName);
         Console.ReadLine();
         Console.WriteLine("Started...");
     }
 
-    private static async Task UsingProcessors()
+    private static async Task UsingProcessors(string naam)
     {
         // For checkpoints
         // Checkpoints keep track of what you read (stored in blob)
@@ -34,7 +34,7 @@ class Program
         blobContainerClient.CreateIfNotExists();
 
         var processor = new EventProcessorClient(blobContainerClient,
-            "memyselfandi",
+            naam,
             conStr, hubName);
 
         processor.ProcessEventAsync += async partitionEvent =>

@@ -63,10 +63,7 @@ public class Program
                 .ToArray();
             return forecast;
         })
-        .WithName("GetWeatherForecast").RequireAuthorization(opt=>
-        {
-            opt.RequireRole("Lezert");
-        });
+        .WithName("GetWeatherForecast").RequireAuthorization();
                 
 
         app.Run();

@@ -3,11 +3,11 @@ using Microsoft.Identity.Client;
 
 internal class Program
 {
-    private static string ServiceUrl = "https://localhost:7031/";
+    private static string ServiceUrl = "https://localhost:7266/";
     private static async Task Main(string[] args)
     {
-        await DoTheCodeFlowAsync();
-        //await DoTheCredentialFlowAsync();
+        //await DoTheCodeFlowAsync();
+        await DoTheCredentialFlowAsync();
         
         Console.ReadLine();
     }
@@ -19,14 +19,14 @@ internal class Program
         //    This prepares Code Grant Flow
         // 2) Set Redirect Uri to http://localhost (must be http. Port is optional)
         var bld = PublicClientApplicationBuilder
-            .Create("0d3f75a2-7496-4e48-8da8-8f63113c1fa2")
+            .Create("e96ce23c-91ff-407d-92e2-4aefb321d62e")
             .WithAuthority(AzureCloudInstance.AzurePublic, "030b09d5-7f0f-40b0-8c01-03ac319b2d71")
             .WithRedirectUri("http://localhost:9898/");  // http scheme only!
 
         var app = bld.Build();
         // .AcquireTokenByUsernamePassword
         var token = await app.AcquireTokenInteractive(
-            new string[] { "api://0d3f75a2-7496-4e48-8da8-8f63113c1fa2/Toegang" })
+            new string[] { "api://e96ce23c-91ff-407d-92e2-4aefb321d62e/Lezen" })
             .ExecuteAsync();
 
         Console.WriteLine(token.AccessToken);
@@ -52,13 +52,13 @@ internal class Program
         //    d) Select the roles you defined in webapi registration
         //    e) Grant Admin consent on the newly created permission.
         var app = ConfidentialClientApplicationBuilder
-            .Create("06a90d24-bc74-40b5-ad73-1f5c06bf9355")
+            .Create("c2177b60-ef45-4bd8-9dea-6152bbe1b84a")
             .WithTenantId("030b09d5-7f0f-40b0-8c01-03ac319b2d71")
-            .WithClientSecret("-rw8Q~fQKmZ4R-ADFA32aluc-Lwjhg~5g-Srlbb5");
+            .WithClientSecret("Hg58Q~.c2TMCOSlYbyp~mpAXo7o~hHgfLRknzcQX");
 
         var token = await app.Build()
             .AcquireTokenForClient(
-                new string[]{"api://06a90d24-bc74-40b5-ad73-1f5c06bf9355/.default"}) // Api ID Uri from webapi regstration. Add /.default to it
+                new string[]{ "api://e96ce23c-91ff-407d-92e2-4aefb321d62e/.default" }) // Api ID Uri from webapi regstration. Add /.default to it
             .ExecuteAsync();
         Console.WriteLine(token.AccessToken);
 
