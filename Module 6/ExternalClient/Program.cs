@@ -44,7 +44,7 @@ internal class Program
     {
         // To make this work do the following:
         // 1) On the application registration of the webapi define an App Role
-        //    for Application. 
+        //    for Application. Make sure you are the OWNER
         // 2) Create a new Application Registration for the servie app.
         //    a) Certificates & secrets: Generate a new Client Secret
         //    b) API permissions: Add Permission -> My Apis -> Select your webapi registration.
